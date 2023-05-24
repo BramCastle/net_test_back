@@ -1,0 +1,8 @@
+INSERT INTO  AspNetUsers
+           (       Id, Deleted,  UserName,  NormalizedUserName,  Email,  NormalizedEmail,
+                   EmailConfirmed,  PasswordHash,  SecurityStamp,  ConcurrencyStamp,  PhoneNumber,
+                   PhoneNumberConfirmed,  TwoFactorEnabled,  LockoutEnd,  LockoutEnabled,  AccessFailedCount)
+     VALUES
+           ( 'b5e32885-c4ab-4541-8884-6bb75f4e8136',  'FALSE', 'abraham@gmail.com', 'abraham@gmail.com', 'abraham@gmail.com', 'abraham@gmail.com',
+            0, 'AQAAAAEAACcQAAAAEAj4suBhmp4seFVxOfRuiyFS3G/QVWTnhsDLzFWRxlPHRt2QMoHax1kQ8Xo5+n7F/A==', 'c75efaaa-b673-42b7-8706-25ab08032fa7', '0cf52f5d-9df2-470c-8c44-a97974f90748', NULL,
+            0, 0, NULL, 1, 0);

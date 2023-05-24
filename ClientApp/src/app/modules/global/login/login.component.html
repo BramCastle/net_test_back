@@ -1,0 +1,9 @@
+<div class="wrapper">
+	<div class="container">
+		<form class="form" [formGroup]="loginForm" (ngSubmit)="btnIniciarSesion_onClick()">
+			<input type="email" placeholder="Username" formControlName="email">
+			<input type="password" placeholder="Password" formControlName="password">
+			<button type="submit">Iniciar Sesión</button>
+		</form>
+	</div>
+</div>
