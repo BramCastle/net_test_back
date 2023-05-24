@@ -9,6 +9,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
+import {MatMenuModule} from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -31,6 +32,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     ReactiveFormsModule,
     MatDialogModule,
+    MatMenuModule,
   ],
   exports: [
     HttpClientModule,
@@ -43,6 +45,7 @@ import { LoginComponent } from './login/login.component';
     MatTableModule,
     FormsModule,
     MatDialogModule,
+    MatMenuModule,
   ],
   declarations: [
     IndexComponent,

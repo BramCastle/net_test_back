@@ -60,7 +60,7 @@ namespace net_test.Services
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("_BRAM_3RP_"));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("BRAM_DEVELOPMENTS"));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var expiration = DateTime.UtcNow.AddMinutes(tiempoExpiracion);

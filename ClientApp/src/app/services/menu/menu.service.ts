@@ -8,12 +8,13 @@ import { APP_BASE_HREF } from '@angular/common';
   providedIn: 'root'
 })
 
-export class ClientesService {
+export class MenuService {
 
-  constructor(private httpClient : HttpClient){
+  constructor(private httpClient : HttpClient, @Inject(APP_BASE_HREF) private urlBase : string){
+    this.urlBase = Server.ip();
   }
 
-  index(dataSource: any){
-    return this.httpClient.post<IReturn>('http://localhost:5001'+"api/clientes/index", dataSource);
+  index(){
+    return this.httpClient.get<IReturn>('http://localhost:5001'+"/api/menu/index");
   }
 }

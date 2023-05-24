@@ -25,7 +25,7 @@ const ELEMENT_DATA: any[] = [
 
 export class IndexComponent implements OnInit {
 
-  displayedColumns: string[] = ['item', 'codigo', 'descripcion', 'stock', 'fecha', 'fechaUpdate'];
+  displayedColumns: string[] = ['id', 'nombre', 'fechaCreacion', 'fechaUpdate'];
   dataSource = new MatTableDataSource<any>([]);
 
   textSearch = "";

@@ -94,7 +94,7 @@ namespace net_test
                      ValidIssuer = "bram.com.mx",
                      ValidAudience = "bram.com.mx",
                      IssuerSigningKey = new SymmetricSecurityKey(
-                     Encoding.UTF8.GetBytes("_BRAM_3RP_")),
+                     Encoding.UTF8.GetBytes("BRAM_DEVELOPMENTS")),
                      ClockSkew = TimeSpan.Zero
                  });
 
@@ -152,6 +152,7 @@ namespace net_test
             // A
             services.AddScoped<AspNetUserService>();
             services.AddScoped<SessionsService>();
+            services.AddScoped<MenuService>();
         }
     }
 }

@@ -16,7 +16,7 @@ export const globalRoutes: Routes = [
   {
     path: 'index',
     component: IndexComponent,
-    loadChildren: () => import('./global.module').then(m => m.GlobalModule), 
-    canActivate: [AuthGuard]
+    // loadChildren: () => import('./global.module').then(m => m.GlobalModule), 
+    // canActivate: [AuthGuard]
   },
 ];

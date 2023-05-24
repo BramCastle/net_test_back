@@ -8,8 +8,13 @@ import { GlobalModule } from './modules/global/global.module';
 import { HttpClient } from '@angular/common/http';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthService } from './services/auth/auth.service';
+import { MenuService } from './services/menu/menu.service';
+import { ClienteModule } from './modules/cliente/cliente.module';
+import { ClientesService } from './services/clientes/clientes.service';
 
-const factory = (http: HttpClient) => new AuthService(http, '')
+const factory = (http: HttpClient) => new AuthService(http)
+const factory2 = (http: HttpClient) => new AuthService(http)
+const factory3 = (http: HttpClient) => new ClientesService(http)
 
 @NgModule({
   declarations: [
@@ -19,13 +24,24 @@ const factory = (http: HttpClient) => new AuthService(http, '')
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    GlobalModule
+    GlobalModule,
+    ClienteModule
   ],
   providers: [
     AuthGuard,
     {
       provide: AuthService,
       useFactory: factory,
+      deps: [HttpClient],
+    },
+    {
+      provide: MenuService,
+      useFactory: factory2,
+      deps: [HttpClient],
+    },
+    {
+      provide: ClientesService,
+      useFactory: factory3,
       deps: [HttpClient],
     }
   ],

@@ -2,6 +2,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { IReturn } from 'src/app/libraries/ireturn';
 import { Sessions } from 'src/app/libraries/sessions';
 
 @Injectable({
@@ -9,25 +10,18 @@ import { Sessions } from 'src/app/libraries/sessions';
 })
 export class AuthService {
 
-  constructor(private http: HttpClient, @Inject(APP_BASE_HREF) private baseUrl: string) { }
+  constructor(private http: HttpClient) { }
   
   login(login: IUserLogin): Observable<any>{ 
     return this.http.post<ISession>('http://localhost:5001' + '/api/AspNetUser/Login', login);
   }
 
-  refeshToken(): Observable<any> {
-    return this.http.post<any>(this.baseUrl + "api/AspNetUser/Refresh", { token : Sessions.getItem('token')} , Sessions.header());
-  }
-
-  logout( ) : Observable<ILogout> {
-    return this.http.post<ILogout>("api/AspNetUser/Logout", {
-      headers: {
-        "Authorization"   : "Bearer " + Sessions.getItem("token")
-      }
-    });
-  }
   loggedIn(){
     return Sessions.getItem('token');
+  }
+
+  index(): Observable<any>{
+    return this.http.get<IReturn>('http://localhost:5001'+'/api/menus/index');
   }
 }
 
