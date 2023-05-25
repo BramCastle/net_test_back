@@ -153,6 +153,7 @@ namespace net_test
             services.AddScoped<AspNetUserService>();
             services.AddScoped<SessionsService>();
             services.AddScoped<MenuService>();
+            services.AddScoped<ClientesService>();
         }
     }
 }

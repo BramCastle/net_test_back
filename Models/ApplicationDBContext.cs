@@ -18,9 +18,8 @@ namespace net_test.Models{
 
         }
 
-
-        // A
         public DbSet<AspNetUser> AspNetUsers { get; set; }
         public DbSet<Menu> Menus { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
     }
 }

@@ -25,7 +25,7 @@ const ELEMENT_DATA: any[] = [
 
 export class IndexComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'nombre', 'fechaCreacion', 'fechaUpdate'];
+  displayedColumns: string[] = ['id', 'nombre', 'rfc', 'fechaCreate', 'fechaUpdate'];
   dataSource = new MatTableDataSource<any>([]);
 
   textSearch = "";
@@ -47,18 +47,6 @@ export class IndexComponent implements OnInit {
   index(){
     let params = {
       search: this.textSearch,
-      searchFilters: [{ field: 'Codigo'}, { field: 'Descripcion'}],
-      filters: [],
-      filtersMultiple: [],
-      dateFrom: '',
-      dateTo: '',
-      dateOptions: [
-          {
-              field: 'CreatedFecha'
-          }
-      ],
-      columns: [],
-      persistenceColumns: [],
       length: 100,
       page: 1
   }

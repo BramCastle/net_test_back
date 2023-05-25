@@ -1,3 +1,11 @@
-<p>
-  index works!
-</p>
+<mat-toolbar color="primary">
+  <button [routerLink]="'/index'" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>home</mat-icon>
+  </button>
+  <span>Net_Test</span>
+  <span class="example-spacer"></span>
+  {{'UserName'}}
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>person</mat-icon>
+    </button>
+</mat-toolbar>
